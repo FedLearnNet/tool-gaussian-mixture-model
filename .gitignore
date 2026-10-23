@@ -31,3 +31,5 @@ var/
 *.sublime-workspace
 .venv/
 venv/
+
+.DS_Store
