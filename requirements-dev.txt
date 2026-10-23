@@ -1,0 +1,4 @@
+FL-Net-Python-Tool-API~=0.7.12
+
+scikit-learn
+matplotlib

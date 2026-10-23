@@ -1,0 +1,8 @@
+.venv
+.git
+requirements-dev.txt
+example-database-compose.yml
+docker-compose.yml
+Dockerfile
+data/iris.csv
+dendrogram.png
