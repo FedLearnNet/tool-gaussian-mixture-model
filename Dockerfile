@@ -1,4 +1,4 @@
-FROM ghcr.io/fedlearnnet/python-tool-api/base-python-dep:0.7.15
+FROM ghcr.io/fedlearnnet/python-tool-api/base-python-dep:0.7.15.dev
 
 USER 0
 
