@@ -1,4 +1,4 @@
-FL-Net-Python-Tool-API~=0.7.12
+FL-Net-Python-Tool-API~=0.7.15
 
 scikit-learn
 matplotlib
