@@ -1,188 +1,192 @@
 config:
   hyperparams:
-    - default: '3'
-      description: Number of Gaussian components (clusters).
-      maxValue: 200.0
-      minValue: 1.0
-      name: n_components
-      options: [ ]
-      pattern: null
-      type: INTEGER
-    - default: full
-      description: Covariance type for each component.
-      maxValue: null
-      minValue: null
-      name: covariance_type
-      options:
-        - full
-        - tied
-        - diag
-        - spherical
-      pattern: null
-      type: CATEGORICAL
-    - default: '0.001'
-      description: Convergence threshold for EM (stop when improvement < tol).
-      maxValue: null
-      minValue: 0.0
-      name: tol
-      options: [ ]
-      pattern: null
-      type: FLOAT
-    - default: '0.000001'
-      description: Non-negative regularization added to the diagonal of covariance.
-      maxValue: null
-      minValue: 0.0
-      name: reg_covar
-      options: [ ]
-      pattern: null
-      type: FLOAT
-    - default: '100'
-      description: Maximum number of EM iterations per initialization.
-      maxValue: 2000.0
-      minValue: 1.0
-      name: max_iter
-      options: [ ]
-      pattern: null
-      type: INTEGER
-    - default: '1'
-      description: Number of initializations to perform (best log-likelihood kept).
-      maxValue: 100.0
-      minValue: 1.0
-      name: n_init
-      options: [ ]
-      pattern: null
-      type: INTEGER
-    - default: kmeans
-      description: Initialization strategy.
-      maxValue: null
-      minValue: null
-      name: init_params
-      options:
-        - kmeans
-        - random
-      pattern: null
-      type: CATEGORICAL
-    - default: '42'
-      description: Random seed for reproducibility.
-      maxValue: 2147483647.0
-      minValue: 0.0
-      name: random_state
-      options: [ ]
-      pattern: null
-      type: INTEGER
-    - default: '0'
-      description: If true, reuse the solution of the previous fit as initialization.
-      maxValue: null
-      minValue: null
-      name: warm_start
-      options: [ ]
-      pattern: null
-      type: BOOLEAN
-    - default: '1'
-      description: Standardize features to zero mean / unit variance before fitting (recommended).
-      maxValue: null
-      minValue: null
-      name: standardize
-      options: [ ]
-      pattern: null
-      type: BOOLEAN
-    - default: '1'
-      description: Output hard labels (argmax of responsibilities).
-      maxValue: null
-      minValue: null
-      name: output_labels
-      options: [ ]
-      pattern: null
-      type: BOOLEAN
-    - default: '1'
-      description: Output responsibilities/probabilities per component.
-      maxValue: null
-      minValue: null
-      name: output_responsibilities
-      options: [ ]
-      pattern: null
-      type: BOOLEAN
-
+  - default: '3'
+    description: Number of Gaussian components (clusters).
+    maxValue: 200.0
+    minValue: 1.0
+    name: n_components
+    options: []
+    pattern: null
+    type: INTEGER
+  - default: full
+    description: Covariance type for each component.
+    maxValue: null
+    minValue: null
+    name: covariance_type
+    options:
+    - full
+    - tied
+    - diag
+    - spherical
+    pattern: null
+    type: CATEGORICAL
+  - default: '0.001'
+    description: Convergence threshold for EM (stop when improvement < tol).
+    maxValue: null
+    minValue: 0.0
+    name: tol
+    options: []
+    pattern: null
+    type: FLOAT
+  - default: '0.000001'
+    description: Non-negative regularization added to the diagonal of covariance.
+    maxValue: null
+    minValue: 0.0
+    name: reg_covar
+    options: []
+    pattern: null
+    type: FLOAT
+  - default: '100'
+    description: Maximum number of EM iterations per initialization.
+    maxValue: 2000.0
+    minValue: 1.0
+    name: max_iter
+    options: []
+    pattern: null
+    type: INTEGER
+  - default: '1'
+    description: Number of initializations to perform (best log-likelihood kept).
+    maxValue: 100.0
+    minValue: 1.0
+    name: n_init
+    options: []
+    pattern: null
+    type: INTEGER
+  - default: kmeans
+    description: Initialization strategy.
+    maxValue: null
+    minValue: null
+    name: init_params
+    options:
+    - kmeans
+    - random
+    pattern: null
+    type: CATEGORICAL
+  - default: '42'
+    description: Random seed for reproducibility.
+    maxValue: 2147483647.0
+    minValue: 0.0
+    name: random_state
+    options: []
+    pattern: null
+    type: INTEGER
+  - default: '0'
+    description: If true, reuse the solution of the previous fit as initialization.
+    maxValue: null
+    minValue: null
+    name: warm_start
+    options: []
+    pattern: null
+    type: BOOLEAN
+  - default: '1'
+    description: Standardize features to zero mean / unit variance before fitting
+      (recommended).
+    maxValue: null
+    minValue: null
+    name: standardize
+    options: []
+    pattern: null
+    type: BOOLEAN
+  - default: '1'
+    description: Output hard labels (argmax of responsibilities).
+    maxValue: null
+    minValue: null
+    name: output_labels
+    options: []
+    pattern: null
+    type: BOOLEAN
+  - default: '1'
+    description: Output responsibilities/probabilities per component.
+    maxValue: null
+    minValue: null
+    name: output_responsibilities
+    options: []
+    pattern: null
+    type: BOOLEAN
   input:
-    - delimiter: null
-      description: Tabular feature matrix. Rows = samples, columns = numeric features. Optional first column 'id'; otherwise indices are used.
-      hasHeader: true
-      maxValue: null
-      minValue: null
-      name: features
-      required: true
-      shape: null
-      tabularSchema:
-        allowOnlyNumbers: true
-        prohibitedNulls: true
-        nullPolicy: null
-      type: CSV
-
+  - delimiter: null
+    description: Tabular feature matrix. Rows = samples, columns = numeric features.
+      Optional first column 'id'; otherwise indices are used.
+    hasHeader: true
+    maxValue: null
+    minValue: null
+    name: features
+    required: true
+    shape: null
+    tabularSchema:
+      allowOnlyNumbers: null
+      prohibitedNulls: true
+      nullPolicy: null
+    type: CSV
   output:
-    - delimiter: null
-      description: Hard cluster assignments per sample.
-      hasHeader: null
-      maxValue: null
-      minValue: null
-      name: labels
-      required: false
-      shape: null
-      tabularSchema: null
-      type: CSV
-    - delimiter: null
-      description: Soft assignments (responsibilities). Rows=samples, columns=components. (Only if output_responsibilities=true).
-      hasHeader: null
-      maxValue: null
-      minValue: null
-      name: responsibilities
-      required: false
-      shape: null
-      tabularSchema: null
-      type: CSV
-    - delimiter: null
-      description: Mixture weights
-      hasHeader: null
-      maxValue: null
-      minValue: null
-      name: weights
-      required: false
-      shape: null
-      tabularSchema: null
-      type: CSV
-    - delimiter: null
-      description: Component means (means_). Rows=components, columns=features.
-      hasHeader: null
-      maxValue: null
-      minValue: null
-      name: means
-      required: false
-      shape: null
-      tabularSchema: null
-      type: CSV
-    - delimiter: null
-      description: Covariance parameters (covariances_) serialized to CSV depending on covariance_type.
-      hasHeader: null
-      maxValue: null
-      minValue: null
-      name: covariances
-      required: false
-      shape: null
-      tabularSchema: null
-      type: CSV
-    - delimiter: null
-      description: HTML report with parameters, convergence, AIC/BIC, log-likelihood and cluster-size stats.
-      hasHeader: null
-      maxValue: null
-      minValue: null
-      name: report
-      required: false
-      shape: null
-      tabularSchema: null
-      type: HTML
+  - delimiter: null
+    description: Hard cluster assignments per sample.
+    hasHeader: null
+    maxValue: null
+    minValue: null
+    name: labels
+    required: false
+    shape: null
+    tabularSchema: null
+    type: CSV
+  - delimiter: null
+    description: Soft assignments (responsibilities). Rows=samples, columns=components.
+      (Only if output_responsibilities=true).
+    hasHeader: null
+    maxValue: null
+    minValue: null
+    name: responsibilities
+    required: false
+    shape: null
+    tabularSchema: null
+    type: CSV
+  - delimiter: null
+    description: Mixture weights
+    hasHeader: null
+    maxValue: null
+    minValue: null
+    name: weights
+    required: false
+    shape: null
+    tabularSchema: null
+    type: CSV
+  - delimiter: null
+    description: Component means (means_). Rows=components, columns=features.
+    hasHeader: null
+    maxValue: null
+    minValue: null
+    name: means
+    required: false
+    shape: null
+    tabularSchema: null
+    type: CSV
+  - delimiter: null
+    description: Covariance parameters (covariances_) serialized to CSV depending
+      on covariance_type.
+    hasHeader: null
+    maxValue: null
+    minValue: null
+    name: covariances
+    required: false
+    shape: null
+    tabularSchema: null
+    type: CSV
+  - delimiter: null
+    description: HTML report with parameters, convergence, AIC/BIC, log-likelihood
+      and cluster-size stats.
+    hasHeader: null
+    maxValue: null
+    minValue: null
+    name: report
+    required: false
+    shape: null
+    tabularSchema: null
+    type: HTML
 info:
-  longDescription: null
-  name: GaussianMixtureModel
-  shortDescription: "Probabilistic clustering with scikit-learn GaussianMixture (EM), including responsibilities and model parameters."
-  slug: gmm
-  sourceUrl: https://gitlab.cosy.bio/cosybio/posymed/apps/gaussianmixturemodel
+  name: tool-gaussian-mixture-model
+  slug: tool-gaussian-mixture-model
   type: SELF_LEARNED
+  sourceUrl: https://github.com/FedLearnNet/tool-gaussian-mixture-model
+  shortDescription: Fits Gaussian mixture models and exports cluster labels, membership
+    probabilities, and model parameters.
+  longDescription: null
