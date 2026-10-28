@@ -1,4 +1,4 @@
-# tool-gaussian-mixture-model
+# gaussian-mixture-model
 
 Fits Gaussian mixture models and exports cluster labels, membership probabilities, and model parameters.
 

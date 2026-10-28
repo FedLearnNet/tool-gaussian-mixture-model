@@ -183,8 +183,8 @@ config:
     tabularSchema: null
     type: HTML
 info:
-  name: tool-gaussian-mixture-model
-  slug: tool-gaussian-mixture-model
+  name: gaussian-mixture-model
+  slug: gaussian-mixture-model
   type: SELF_LEARNED
   sourceUrl: https://github.com/FedLearnNet/tool-gaussian-mixture-model
   shortDescription: Fits Gaussian mixture models and exports cluster labels, membership
